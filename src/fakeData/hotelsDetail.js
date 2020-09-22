@@ -1,4 +1,4 @@
-const hotelsDetail = [
+export const hotelsDetail = [
     {
         name: 'Light bright airy stylish apt & safe peaceful stay',
         specification: {

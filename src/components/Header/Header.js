@@ -1,19 +1,18 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Form, Navbar } from 'react-bootstrap';
 import './Header.css';
 import logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import { Link, Route } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="home fixed-top">
-            <div className='bg'></div>
-            <>
-                <Container>
-                   <Navbar>
-                        <Navbar.Brand href="#home">
-                            <img className="logo" src={logo} alt="logo"/>
+        <div className="bg">
+            <Container>
+                <Navbar>
+                    <Navbar.Brand href="/home">
+                        <img className="logo" src={logo} alt="logo"/>
                         </Navbar.Brand>
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Form className="search-bar ml-5">
@@ -24,11 +23,10 @@ const Header = () => {
                             <Navbar.Brand className='ml-5 text-white' href="#home">Destination</Navbar.Brand>
                             <Navbar.Brand className='ml-5 text-white' href="#home">Blog</Navbar.Brand>
                             <Navbar.Brand className='ml-5 text-white' href="#home">Contact</Navbar.Brand>
-                            <Button className='login-btn ml-5'>Login</Button>                         
-                        </Navbar.Collapse>
-                    </Navbar>
-                </Container>
-            </>
+                            <a href="/login" className="btn login-btn ml-5">Login</a>                       
+                    </Navbar.Collapse>
+                </Navbar>
+            </Container>   
         </div>
     );
 };
