@@ -1,0 +1,52 @@
+.hotel {
+    font-family: Montserrat;
+}
+
+.hotel p {
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 0;
+}
+
+.condition {
+    color: #6A6A6A;
+
+}
+
+.condition p {
+    margin: 0;
+    padding-right: 15px;
+}
+
+.hotel-img {
+    width: 270px;
+    height: 190px;
+}
+
+.hotel-name, 
+.cost{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.night {
+    font-weight: normal;
+    color: #6A6A6A;
+}
+
+.ratings {
+    font-size: 14px!important;
+    font-weight: 500;
+}
+
+.total {
+    font-weight: 200;
+    font-size: 14px!important;
+    color: #898989;
+}
+
+.star-icon {
+    height: 20px;
+    width: 20px;
+}

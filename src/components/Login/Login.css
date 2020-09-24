@@ -1,0 +1,107 @@
+.login {
+    font-family: Montserrat;
+    max-width: 570px;
+    margin: auto;
+    border: 1px solid #ABABAB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 40px 50px;
+    font-weight: 500;
+}
+
+.login h3{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.login p {
+    
+    margin-bottom: 0;
+}
+
+.login input{
+    border: none!important;
+    border-bottom: 1px solid #C5C5C5!important;
+    width: 500px;
+    padding: 25px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.login input::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.login .btn {
+    border: none!important;
+    color: #000000!important;
+    font-weight: 500!important;
+    background: #F9A51A!important;
+}
+
+.login-alert {
+    justify-content: space-between;
+}
+
+.yellow {
+    color: #F9A51A;
+}
+
+.yellow:hover {
+    color: #F9A51A;
+}
+
+.check-icon {
+    width: 18px;
+}
+
+.social-login {
+    max-width: 461px;
+    margin: auto;
+    font-family: Montserrat;
+}
+
+.social-login p {
+    font-weight: 500;
+}
+
+.social-login .btn {
+    border: 1px solid #C7C7C7!important;
+    border-radius: 57px!important;
+}
+
+.icon {
+    float: left;
+    width: 30px;
+}
+
+.or {
+    font-weight: 500;
+    max-width: 400px;
+	margin: 24px auto;
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+
+.or:before,
+.or:after {
+	content: "";
+	position: absolute;
+	width: calc(50% - 30px);
+	height: 1px;
+	background: #aaa;
+}
+
+.or:before {
+	left: 0;
+}
+
+.or:after {
+	right: 0;
+}
+
+
