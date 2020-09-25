@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Booking.css';
 import fakeData from "../../fakeData";
 import { useHistory, useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import { UserContext } from '../../App';
 
 const Booking = () => {
+    const [showPlaceArea] = useContext(UserContext);
+    // const [placeArea, setPlaceArea] = useContext(UserContext);
+    
     const history = useHistory();
     const handleLoginRoute = () => {
         history.push("/destination");
     };
     const {id} = useParams();
-
     const bookingData = fakeData.find((place) => place.id === id);
     const {name, description} = bookingData;
 
@@ -19,8 +22,8 @@ const Booking = () => {
             <Container>
                 <div className="row">
                     <div className="col-md-6">
-                        <h1>{name}</h1>
-                        <p>{description}</p>
+                        <h1>{showPlaceArea.name}</h1>
+                        <p>{showPlaceArea.description}</p>
                     </div>
                     <div className="col-md-6">
                         <div className="booking-form">
@@ -31,7 +34,7 @@ const Booking = () => {
 								</div>
 								<div className="form-group">
 									<label>Destination</label>
-									<input type="text" className="form-control" placeholder={name} />
+									<input type="text" className="form-control" placeholder={showPlaceArea.name} />
 								</div>
 								<div className="form-group row booking-date">
 									<div className="col-6">

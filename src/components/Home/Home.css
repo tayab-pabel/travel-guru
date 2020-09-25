@@ -52,6 +52,16 @@
     font-weight: 500!important;
 }
 
+.text-dark{
+    margin-top: 7px;
+    color: #000000!important;
+    font-weight: 500!important;
+}
+
+.arrow-icon {
+    margin-top: 10px;
+}
+
 .booking-card{
     margin-right: -250px;
 }

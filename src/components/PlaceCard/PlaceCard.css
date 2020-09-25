@@ -1,6 +1,6 @@
 .place-img {
     position: relative;
-    
+    cursor: pointer;
 }
 
 .place-img img {
@@ -19,6 +19,7 @@
 }
 
 
+.place-img:active,
 .place-img:hover,
 .place-img:focus {
     position: absolute;

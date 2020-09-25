@@ -1,17 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { UserContext } from '../../App';
 import './PlaceCard.css';
 
 const PlaceCard = (props) => {
+    const [placeArea, setPlaceArea] = useContext(UserContext);
     const { name, img, id } = props.placeCard;
     return (
         <div className="col-4">
-            <Link className="single-place-card" to={`/booking/${id}`}>
-                <div className="place-img">
+            <div className="single-place-card" >
+                <div onClick={()=> setPlaceArea(props.placeCard)} className="place-img">
                     <img src={img} alt=""/>
                     <h3>{name}</h3>
                 </div>
-            </Link>
+            </div>
         </div>
     );
 };

@@ -10,13 +10,16 @@ import { handleGoogleSignIn, initializeLoginFramework, handleSignOut, handleFbSi
 const Login = () => {
 
     const [newUser, setNewUser] = useState(false);
-
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
+        first: '',
+        second: '',
         email: '',
         password: '',
-        photo: ''
+        confirmPassword: '',
+        err: '',
+        success: ''
     });
 
     initializeLoginFramework();
@@ -95,11 +98,11 @@ const Login = () => {
                     <div className="row">
                         <h3 className="login-title mb-4">{newUser ? 'Create an account' : 'Login'}</h3>
                         <form onSubmit={handleSubmit} className="login-form">
-                            {newUser && <input onBlur={handleBlur} className="form-control" name="name" type="text" placeholder="First Name"/>}
-                            {newUser && <input onBlur={handleBlur} className="form-control" name="name" type="text" placeholder="Last Name"/>}
+                            {newUser && <input onBlur={handleBlur} className="form-control" name="first" type="text" placeholder="First Name"/>}
+                            {newUser && <input onBlur={handleBlur} className="form-control" name="second" type="text" placeholder="Last Name"/>}
                             <input onBlur={handleBlur} className="form-control" type="email" name="email" placeholder="Username or Email" required/>
                             <input onBlur={handleBlur} className="form-control" type="password" name="password" placeholder="Password" required/>
-                            {newUser && <input onBlur={handleBlur} className="form-control" name="password" type="password" placeholder="Confirm Password"/>}
+                            {newUser && <input onBlur={handleBlur} className="form-control" name="confirmPassword" type="password" placeholder="Confirm Password"/>}
                             { !newUser &&
                                 <div className="d-flex login-alert">
                                     <div className="login-remember">
@@ -121,19 +124,10 @@ const Login = () => {
             <div className="social-login text-center">
                 <p className="or mt-3">Or</p>
                 <div className="google-signIn">
-                    {
-                        user.isSignedIn ? <a onClick={signOut} className="btn btn-block pt-2 pb-0">
+                    <a onClick={googleSignIn} className="btn btn-block pt-2 pb-0">
                         <img className="icon" src={googleLogo} alt=""/>
-                        <p className="text-center pt-1 pb-0 mb-2">Sign Out</p>
-                        </a> :
-                        <a onClick={googleSignIn} className="btn btn-block pt-2 pb-0">
-                            <img className="icon" src={googleLogo} alt=""/>
-                            <p className="text-center pt-1 pb-0 mb-2">Continue with Google</p>
-                        </a>
-                    }
-                    {
-                        user.isSignedIn && <p>Welcome, {user.name}</p>
-                    }
+                        <p className="text-center pt-1 pb-0 mb-2">Continue with Google</p>
+                    </a>
                 </div>
                 <div className="fb-signIn mt-2">
                     <a onClick={fbSignIn} className="btn btn-block pt-2 pb-0">

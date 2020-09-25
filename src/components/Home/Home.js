@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Home.css';
 import fakeData from "../../fakeData";
 import { useHistory } from 'react-router-dom';
@@ -6,11 +6,12 @@ import { Button, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import PlaceCard from '../PlaceCard/PlaceCard';
+import { UserContext } from '../../App';
 
-const Home = () => {
+const Home = (props) => {
+    const [placeArea, setPlaceArea] = useContext(UserContext);
     const history = useHistory();
     const placeCardData = fakeData.slice(0 , 3);
-
     const handleBookingRoute = () => {
         history.push(`/booking/${placeCardData[0].id}`);
     };
@@ -21,9 +22,11 @@ const Home = () => {
                 <div className="row">
                     <div className="col-md-5">
                         <div className="booking-description mb-md-0 mb-5">
-                            <h1>Cox's bazar</h1>
-                            <p>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
-                            <Button className="booking-btn" onClick={handleBookingRoute}>Booking<FontAwesomeIcon className="arrow-icon ml-3" icon={faArrowRight} />
+                            <h1>{placeArea.name}</h1>
+                            <p>{placeArea.description}</p>
+                            <Button className="booking-btn d-flex" onClick={handleBookingRoute}>
+                                <p className="ml-3 text-dark">Booking</p>
+                                <FontAwesomeIcon className="arrow-icon ml-3" icon={faArrowRight}/>
 							</Button>
                         </div>
                     </div>
